@@ -1,0 +1,45 @@
+<div  *ngIf="employee">
+    <h3> {{employee.FirstName}} {{employee.LastName}}</h3>
+     {{ employee.ID}}
+     <div class="panel-body">
+ 
+         <div class="col-xs-10">
+ 
+             <div class="row vertical-align">
+ 
+                 <div class="col-xs-8">
+ 
+                     <div class="row">
+                         <div class="col-xs-6">
+                             Gender
+                         </div>
+                         <div class="col-xs-6">
+                             : {{employee.Gender}}
+                         </div>
+                     </div>
+ 
+ 
+                     <div class="row">
+                         <div class="col-xs-6">
+                             Salary
+                         </div>
+                         <div class="col-xs-6">
+                             : {{employee.Salary}}
+                         </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-xs-6">
+                            Details
+                        </div>
+                        <div class="col-xs-6">
+                            : {{employee.Details}}
+                        </div>
+                    </div>
+
+ 
+                 </div>
+ 
+             </div>
+         </div>
+     </div>
+ </div>
