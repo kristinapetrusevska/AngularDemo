@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Employee } from '../models/employee.model';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 //import 'rxjs/add/observable/of';
 
 @Injectable()
 export class EmployeeService {
 
-    
-    constructor(private _httpClient: HttpClient){
+
+    constructor(private _httpClient: HttpClient) {
 
     }
+    
     // private listEmployees: Employee[] = [
 
     //     {
@@ -47,27 +48,13 @@ export class EmployeeService {
         return this._httpClient.get<Employee[]>('https://localhost:44394/api/employees');
     }
     getEmployee(id: number): Observable<Employee> {
-        return this._httpClient.get<Employee>('https://localhost:44394/api/employees/'+ id);
+        return this._httpClient.get<Employee>('https://localhost:44394/api/employees/' + id);
     }
-    
+
     saveEmployee(employee: Employee): Observable<Employee> {
-        
-        if (employee.ID === null) {
-           
-            return this._httpClient.post<Employee>('https://localhost:44394/api/employees',
-                employee, {
-                    headers: new HttpHeaders({
-                        'Content-Type': 'application/json'
-                    })
-                })
-                ;
-        } else {
-            
-           
-        }
-                
-                
-        } 
+        return this._httpClient.post<Employee>('https://localhost:44394/api/Employees',
+            employee, { headers: new HttpHeaders({ 'Content-Type': 'application/json' })});
     }
-    
+}
+
 

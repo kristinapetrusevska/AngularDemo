@@ -1,50 +1,51 @@
-<button id="createNewEmpDiv" class="btn btn-primary" (click)="toggle()">Create New Employee</button>
-<br />
-<br />
-<br />
+<!-- <div><button id="createNewEmpDiv" class="btn btn-primary" (click)="toggle()" >Create New Employee</button> -->
+  <br />
+  <br />
+  <br />
 
-<ng-container *ngIf="show">
+  <ng-container *ngIf="show">
+    <div [ngClass]="_dataService.currentShow.getValue() == true ? 'grey-bg' : ''">
+    <form #employeeForm="ngForm" class="popup" (ngSubmit)="saveEmployee()">
+      <div>
+        <div class="panel panel-primary ">
+          <div class="panel-body">
 
-    <form #employeeForm="ngForm" class="popup">
-      <div class="grey-bg">
-      <div class="panel panel-primary ">
-        <div class="panel-body">
+            <div class="form-group">
+              <label for="FirstName">First Name</label>
+              <input id="FirstName" type="text" class="form-control" name="FirstName" [(ngModel)]="employee.FirstName">
+            </div>
 
-          <div class="form-group">
-            <label for="FirstName">First Name</label>
-            <input id="FirstName" type="text" class="form-control" name="FirstName" [(ngModel)]="employee.FirstName">
+            <div class="form-group">
+              <label for="LastName">Last Name</label>
+              <input id="LastName" type="text" class="form-control" name="LastName" [(ngModel)]="employee.LastName">
+            </div>
+            <div class="form-group">
+              <label for="Gender">Gender</label>
+              <input id="Gender" type="text" class="form-control" name="Gender" [(ngModel)]="employee.Gender">
+            </div>
+            <div class="form-group">
+              <label for="Salary">Salary</label>
+              <input id="Salary" type="text" class="form-control" name="Salary" [(ngModel)]="employee.Salary">
+            </div>
+
+            <div class="form-group">
+              <label for="Details">Details</label>
+              <input id="Details" type="text" class="form-control" name="Details" [(ngModel)]="employee.Details">
+            </div>
+
           </div>
 
-          <div class="form-group">
-            <label for="LastName">Last Name</label>
-            <input id="LastName" type="text" class="form-control" name="LastName" [(ngModel)]="employee.LastName">
+          <div class="panel-footer">
+            <button id="buttonColor" class="btn btn-primary" type="submit">Save</button>
+            <button class="btn btn-cancel" (click)="toggle()"> Cancel</button>
           </div>
-          <div class="form-group">
-            <label for="Gender">Gender</label>
-            <input id="Gender" type="text" class="form-control" name="Gender" [(ngModel)]="employee.Gender">
-          </div>
-          <div class="form-group">
-            <label for="Salary">Salary</label>
-            <input id="Salary" type="text" class="form-control" name="Salary" [(ngModel)]="employee.Salary">
-          </div>
-
-          <div class="form-group">
-            <label for="Details">Details</label>
-            <input id="Details" type="text" class="form-control" name="Details" [(ngModel)]="employee.Details">
-          </div>
-
-        </div>
-
-        <div class="panel-footer">
-          <button class="btn btn-primary" type="submit">Save</button>
-          <button class="btn btn-cancel" (click)="toggle()"> Cancel</button>
         </div>
       </div>
-    </div>
     </form>
 
     Angular Generated Form Model : {{employeeForm.value | json}}
     <br />
     <br />
     Our Employee Model : {{ employee | json}}
+</div>
 </ng-container>

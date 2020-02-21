@@ -1,7 +1,8 @@
 
-<div class="list-group" class="w-50" *ngFor="let employee of employees">
+<div id="listPosition" class="container">
+<div class="list-group" class="w" *ngFor="let employee of employees">
     <div class="list-group-item list-group-item-action " style="font-size: 23px; color:black" (click)="onClick(employee.ID)">
         {{employee.FirstName}}
         {{employee.LastName}}
     </div>
-</div>
+</div></div>

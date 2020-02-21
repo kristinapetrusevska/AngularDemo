@@ -3,3 +3,19 @@
     
     
 }
+#detailsAdjust{
+    margin-left: -50px;
+    margin-right: -1000px;
+    margin-top: 50px;
+    padding-right: 840px;
+    
+
+}
+.panel-primary{
+    border-color: #966978;
+    
+}
+#panelColor{
+    background-color: #966978;
+    border-color: #966978;
+}

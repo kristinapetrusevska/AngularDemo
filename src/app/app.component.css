@@ -9,10 +9,17 @@
     margin-right: 150px;
     margin-left: 80px;
     
+    
   }
-  .grey-bg {
-    position:absolute;
-    height: 100%; 
-    background-color: lightgray;
+  .fade{
+    opacity:0.5;
   }
-  
+  #createNewEmpDiv{
+    margin-left: 213px;
+    margin-top: 13px;
+    background-color: #966978;
+    border-color: #966999;
+  }
+  .font{
+    font-family:"Segoe UI",Arial,sans-serif;
+  }

@@ -1,16 +1,30 @@
-<div class="diva">
-  <div id="mainDiv" class="container">
-    <div class="row">
-      <div class="col-6">
-        <app-list-employees></app-list-employees>
-      </div>
-      <div class="col-6">
-        <app-details-employees></app-details-employees>
-      </div>
+<head>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- Add Bootstrap JS and JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<div id="mainDiv" class="container" style="background-color: rgb(235, 197, 197);">
+  <div class="row">
+    <div class="col-6">
+      <app-list-employees></app-list-employees>
+    </div>
+    <div class="col-6">
+      <app-details-employees></app-details-employees>
+    </div>
+  </div>
+  <div class="col-12">
+
+    <div><button id="createNewEmpDiv" class="btn btn-primary" (click)="toggle()">Create New Employee</button>
+
     </div>
   </div>
 
-  <div id="createEditPopupDiv" >
+
+
+
+  <div id="createEditPopupDiv">
     <app-create-employees></app-create-employees>
   </div>
-</div>

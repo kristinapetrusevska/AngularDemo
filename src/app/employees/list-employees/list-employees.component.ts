@@ -4,6 +4,7 @@ import { EmployeeService } from '../employee.service';
 import { DataService } from 'src/app/data.service';
 
 
+
 @Component({
   selector: 'app-list-employees',
   templateUrl: './list-employees.component.html',
@@ -29,9 +30,7 @@ export class ListEmployeesComponent implements OnInit {
       (error: any) => { console.log('error: ' + error) },
       () => { this._dataService.changeEmployee(this.employee)});
   }
-  save(employee: Employee) {
-    this.employees.push(employee);
-}
+  
 
 
 }
