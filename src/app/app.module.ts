@@ -1,6 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,19 +18,21 @@ import { DataService } from './data.service';
 import { CreateEmployeesComponent } from './employees/create-employees/create-employees.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     ListEmployeesComponent,
     DetailsEmployeesComponent,
     CreateEmployeesComponent,
+   
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,MatDialogModule, MatInputModule, MatButtonModule, MatCardModule, MatFormFieldModule
   ],
   providers: [EmployeeService,DataService],
   bootstrap: [AppComponent]

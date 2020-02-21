@@ -1,37 +1,7 @@
-<div *ngFor="let employee of employees">
-   <h3 (click)="onClick(employee.ID)"> {{employee.FirstName}} {{employee.LastName}}</h3>
-    
-    <div class="panel-body">
 
-        <div class="col-xs-10">
-
-            <div class="row vertical-align">
-
-                <div class="col-xs-8">
-
-                    <div class="row">
-                        <div class="col-xs-6">
-                            Gender
-                        </div>
-                        <div class="col-xs-6">
-                            : {{employee.Gender}}
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-xs-6">
-                            Salary
-                        </div>
-                        <div class="col-xs-6">
-                            : {{employee.Salary}}
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-        </div>
+<div class="list-group" class="w-50" *ngFor="let employee of employees">
+    <div class="list-group-item list-group-item-action " style="font-size: 23px; color:black" (click)="onClick(employee.ID)">
+        {{employee.FirstName}}
+        {{employee.LastName}}
     </div>
 </div>

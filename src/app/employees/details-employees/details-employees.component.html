@@ -1,45 +1,24 @@
-<div  *ngIf="employee">
-    <h3> {{employee.FirstName}} {{employee.LastName}}</h3>
-     {{ employee.ID}}
-     <div class="panel-body">
- 
-         <div class="col-xs-10">
- 
-             <div class="row vertical-align">
- 
-                 <div class="col-xs-8">
- 
-                     <div class="row">
-                         <div class="col-xs-6">
-                             Gender
-                         </div>
-                         <div class="col-xs-6">
-                             : {{employee.Gender}}
-                         </div>
-                     </div>
- 
- 
-                     <div class="row">
-                         <div class="col-xs-6">
-                             Salary
-                         </div>
-                         <div class="col-xs-6">
-                             : {{employee.Salary}}
-                         </div>
-                     </div>
-                     <div class="row">
-                        <div class="col-xs-6">
-                            Details
-                        </div>
-                        <div class="col-xs-6">
-                            : {{employee.Details}}
-                        </div>
-                    </div>
+<head>
+    <title>Bootstrap Example</title>
 
- 
-                 </div>
- 
-             </div>
-         </div>
-     </div>
- </div>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Add Bootstrap JS and JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container" *ngIf="employee">
+        <div class="panel-group" class="w-50">
+            <div class="panel panel-primary">
+                <div  class="panel-heading colorsize">{{employee.FirstName}} {{employee.LastName}}</div>
+                <div class="panel-body"> Gender: {{employee.Gender}}<br />
+                    Salary : {{employee.Salary}}<br />
+                    Details : {{employee.Details}}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
