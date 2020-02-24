@@ -2,50 +2,53 @@
   <br />
   <br />
   <br />
-
+  <script>
+    //location.reload();
+    </script>
   <ng-container *ngIf="show">
     <div [ngClass]="_dataService.currentShow.getValue() == true ? 'grey-bg' : ''">
-    <form #employeeForm="ngForm" class="popup" (ngSubmit)="saveEmployee()">
+    <form #employeeForm="ngForm" class="popup" (ngSubmit)="check()">
       <div>
+        <h4 *ngIf="employee.ID==null"> Create Employee </h4>
         <div class="panel panel-primary ">
           <div class="panel-body">
 
             <div class="form-group">
               <label for="FirstName">First Name</label>
-              <input id="FirstName" type="text" class="form-control" name="FirstName" [(ngModel)]="employee.FirstName">
+              <input id="FirstName" type="text" class="form-control" name="FirstName" value="FirstName" [(ngModel)]="employee.FirstName">
             </div>
 
             <div class="form-group">
               <label for="LastName">Last Name</label>
-              <input id="LastName" type="text" class="form-control" name="LastName" [(ngModel)]="employee.LastName">
+              <input id="LastName" type="text" class="form-control" name="LastName" value="LastName" [(ngModel)]="employee.LastName">
             </div>
             <div class="form-group">
               <label for="Gender">Gender</label>
-              <input id="Gender" type="text" class="form-control" name="Gender" [(ngModel)]="employee.Gender">
+              <input id="Gender" type="text" class="form-control" name="Gender" value="Gender" [(ngModel)]="employee.Gender">
             </div>
             <div class="form-group">
               <label for="Salary">Salary</label>
-              <input id="Salary" type="text" class="form-control" name="Salary" [(ngModel)]="employee.Salary">
+              <input id="Salary" type="text" class="form-control" name="Salary" value="Salary" [(ngModel)]="employee.Salary">
             </div>
 
             <div class="form-group">
               <label for="Details">Details</label>
-              <input id="Details" type="text" class="form-control" name="Details" [(ngModel)]="employee.Details">
+              <input id="Details" type="text" class="form-control" name="Details" value="Details" [(ngModel)]="employee.Details">
             </div>
 
           </div>
 
           <div class="panel-footer">
-            <button id="buttonColor" class="btn btn-primary" type="submit">Save</button>
+            <button id="buttonColor" class="btn btn-primary" type="submit" onclick="location.reload();">Save</button> <!--  -->
             <button class="btn btn-cancel" (click)="toggle()"> Cancel</button>
           </div>
         </div>
       </div>
     </form>
 
-    Angular Generated Form Model : {{employeeForm.value | json}}
+    <!-- Angular Generated Form Model : {{employeeForm.value | json}}
     <br />
     <br />
-    Our Employee Model : {{ employee | json}}
+    Our Employee Model : {{ employee | json}} -->
 </div>
 </ng-container>

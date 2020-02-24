@@ -2,16 +2,18 @@ import { Injectable } from '@angular/core';
 import { Employee } from '../models/employee.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 //import 'rxjs/add/observable/of';
 
 @Injectable()
 export class EmployeeService {
 
-
-    constructor(private _httpClient: HttpClient) {
-
+    emp: Employee;
+    constructor(private _httpClient: HttpClient, private _dataService: DataService, private _router: Router) {
+        this._dataService.currentEmployee.subscribe(d => this.emp = d);
     }
-    
+
     // private listEmployees: Employee[] = [
 
     //     {
@@ -52,9 +54,26 @@ export class EmployeeService {
     }
 
     saveEmployee(employee: Employee): Observable<Employee> {
+
         return this._httpClient.post<Employee>('https://localhost:44394/api/Employees',
-            employee, { headers: new HttpHeaders({ 'Content-Type': 'application/json' })});
+            employee, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) });
+
+    }
+    editEmployee(employee: Employee): Observable<Employee> {
+        return this._httpClient.put<Employee>('https://localhost:44394/api/Employees/' + this.emp.ID, employee, {
+            headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+        });
+    }
+    deleteEmployee(employee: Employee) {
+        console.log('Into service..' + employee.ID);
+        return this._httpClient.delete<void>('https://localhost:44394/api/Employees/' + employee.ID);
+
     }
 }
+
+
+
+
+
 
 

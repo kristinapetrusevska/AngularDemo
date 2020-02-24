@@ -17,12 +17,13 @@ export class AppComponent {
     } else {
       this.appShow = true;
     }
-    console.log('appShow: ' + this.appShow);
+    //console.log('appShow: ' + this.appShow);
   }
   toggle() {
+    this._dataService.changeId(null);
     this.appShow = !this.appShow;
     this._dataService.changeShow(this.appShow);//.subscribe(data => data = this.appShow);
-    console.log('toogle from app.comp:' + this.appShow);
+    //console.log('toogle from app.comp:' + this.appShow);
     // this._employeeService.saveEmployee(this.employee).subscribe( data => data =this.employee);
 
   }

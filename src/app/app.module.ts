@@ -19,12 +19,14 @@ import { CreateEmployeesComponent } from './employees/create-employees/create-em
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     ListEmployeesComponent,
     DetailsEmployeesComponent,
     CreateEmployeesComponent,
+    
    
     
   ],
@@ -34,7 +36,7 @@ import { CreateEmployeesComponent } from './employees/create-employees/create-em
     HttpClientModule,
     FormsModule,MatDialogModule, MatInputModule, MatButtonModule, MatCardModule, MatFormFieldModule
   ],
-  providers: [EmployeeService,DataService],
+  providers: [EmployeeService,DataService, ListEmployeesComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

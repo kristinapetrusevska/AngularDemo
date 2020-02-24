@@ -14,6 +14,7 @@ export class DetailsEmployeesComponent implements OnInit {
   employee: Employee;
   empId: number;
   newEmpId: number;
+  show: boolean = false;
 
 
   constructor(private _employeeService: EmployeeService, private _dataService: DataService) {
@@ -22,6 +23,13 @@ export class DetailsEmployeesComponent implements OnInit {
 
   ngOnInit() {
     this._dataService.currentEmployee.subscribe(q => this.employee = q);
+    this._dataService.currentId.subscribe(q=> this.empId =q);
+  }
+  public onClick(id: number) {
+    console.log('Current ID: '+ id);
+    this._dataService.changeShow(true);
+    this._dataService.changeId(id);
+    
   }
 
 

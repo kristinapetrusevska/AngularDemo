@@ -4,3 +4,9 @@
     margin-left: 50px;
     padding-right: 800px;
 }
+  img {
+    display: none;
+  } 
+  div:hover img {
+    display: inline-block;
+  } 
